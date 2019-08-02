@@ -1,0 +1,33 @@
+import json
+import os
+def json_select(path,finalpath):
+
+    #path = '/home/zy3/Documents/testcsv/newcsv/testjson/'
+    os.chdir(path)
+    folder = os.walk(path)
+    files = list(folder)[0][2]
+    for file in files:
+        #filepath = path + '/' + file
+        #filename = file.split('.')[0]
+        #filename = '20160211_083022_2018-03-20.json'
+        #print(file)
+        with open(file, 'r') as load_f:
+            load_dict = json.load(load_f)
+        n = len(load_dict)
+        #print(n,end='')
+        i = 0
+        #finalpath = '/home/zy3/Documents/testcsv/newcsv/'
+        os.chdir(finalpath)
+        with open('finaljson.json', 'w') as finaljson:
+            while i <= n-1:
+
+                dict=json.dumps(load_dict[i])
+                finaljson.write(dict)
+                i += 100
+                #print(n,i)
+        os.chdir(path)
+
+path = '/home/zy3/Project_SC/testjson/'
+finalpath = '/home/zy3/Project_SC/finaljson'
+#path = '/home/zy3/Project_SC/a'
+json_select(path,finalpath)

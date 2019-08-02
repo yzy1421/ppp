@@ -1,0 +1,30 @@
+import os
+import sys
+# from moviepy.editor import VideoFileClip
+# filename=''
+# clip=VideoFileClip(filename)
+# file_time=timeConvert(clip.duration)
+# print(file_time)
+
+import cv2
+# file_path='/home/zy3/Documents/'+'FrameData/20160211_083022_2018-03-20.mp4'
+# cap = cv2.VideoCapture(file_path)
+# if cap.isOpened():
+# # 当成功打开视频时
+#     cap.isOpened()
+#     rate = cap.get(5)
+#     FrameNumber = cap.get(7)
+#     duration = FrameNumber/rate/60
+# print(rate,FrameNumber,duration)
+
+def get_Framenumber(file_path):
+    # videoname(path)
+    cap = cv2.VideoCapture(file_path)
+    if cap.isOpened():
+
+        cap.isOpened()
+        rate = cap.get(5)
+        FrameNumber = cap.get(7)
+    return FrameNumber, rate
+# file_path='/home/zy3/Documents/'+'FrameData/20160211_083022_2018-03-20.mp4'
+# print(get_Framenumber(file_path))
