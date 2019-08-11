@@ -1,0 +1,12 @@
+img_width, img_height = 299, 299
+num_channels = 3
+train_data = 'data/train'
+valid_data = 'data/valid'
+num_classes = 6
+num_train_samples = 63039
+num_valid_samples = 6690
+verbose = 1
+batch_size = 8
+num_epochs = 10
+patience = 50
+best_model = 'model.11-0.6262.hdf5'
